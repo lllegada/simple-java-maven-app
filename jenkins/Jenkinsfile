@@ -29,6 +29,8 @@ pipeline {
         stage('Report'){
         	steps{
         	   // cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+
+               mkdir(dir:"target/html-report")
         	   
                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/html-report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }
