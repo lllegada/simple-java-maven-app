@@ -1,5 +1,7 @@
 package com.mycompany.app;
 
+import cucumber.junit.Cucumber;
+import org.junit.runner.RunWith;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.Before;
@@ -10,6 +12,9 @@ import static org.junit.Assert.*;
 /**
  * Unit test for simple App.
  */
+@RunWith(Cucumber.class)
+@Cucumber.Options(format = {"pretty", "html:target/cucumber", "json:target/cucumber.json"})
+    
 public class AppTest
 {
 
