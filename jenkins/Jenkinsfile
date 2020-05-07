@@ -26,5 +26,12 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
+        stage('Cucumber Report'){
+        	steps{
+        		    cucumber buildStatus "UNSTABLE",
+        		    fileIncludePattern: '**/cucumber.json',
+                    jsonReportDirectory: 'target'
+        	}
+        }
     }
 }
